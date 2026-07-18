@@ -6,7 +6,7 @@ export default function NotFound() {
       <p className="eyebrow text-cream/50">Off the itinerary</p>
       <h1 className="font-display text-4xl text-cream">This street isn&apos;t on our map</h1>
       <p className="max-w-sm text-cream/70">
-        The page you were looking for wandered off. Let&apos;s get back to the date.
+        That page isn&apos;t part of the plan. Let&apos;s get back to the date.
       </p>
       <Link
         href="/"

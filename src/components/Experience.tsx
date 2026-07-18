@@ -109,7 +109,7 @@ export default function Experience() {
         <RouteMap />
 
         <footer className="relative z-10 px-6 pb-28 pt-8 text-center lg:pb-16">
-          <p className="font-display text-2xl italic text-cream">Rain or shine — mostly rain.</p>
+          <p className="font-display text-2xl italic text-cream">Rain or shine. Probably rain.</p>
           <p className="mt-2 text-sm text-cream/55">{dateHuman} · New York</p>
           <button
             type="button"

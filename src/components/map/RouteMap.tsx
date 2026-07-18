@@ -91,8 +91,7 @@ export default function RouteMap() {
       <p className="eyebrow text-cream/50">The shape of the day</p>
       <h2 className="mt-3 text-3xl text-cream sm:text-4xl">Queens → Brooklyn → Manhattan</h2>
       <p className="mt-3 max-w-lg text-cream/65">
-        A short, rainy loop across the East River and back into Manhattan — three
-        stops, one umbrella.
+        A quick loop across the East River and back. Three stops, one umbrella.
       </p>
 
       <div ref={ref} className="mt-8 h-[420px] w-full sm:h-[520px]">

@@ -35,8 +35,8 @@ export default function OpeningScene() {
         </h1>
         <p className="mt-6 time-chip text-cream/80">{dateHuman}</p>
         <p className="mt-4 max-w-md text-base text-cream/70">
-          Three neighborhoods, one rainy day — brunch to handrolls, with the
-          windows worth sitting beside the whole way through.
+          Brunch, an art café, and handrolls, across three neighborhoods.
+          It&apos;s supposed to rain. I planned around it.
         </p>
 
         <div className="mt-9">

@@ -27,9 +27,9 @@ export const weather: Weather = {
   date: "2026-07-18",
   tempLowF: 76,
   tempHighF: 79,
-  summary: "Warm and cloudy with occasional summer rain.",
+  summary: "Warm and cloudy with a little summer rain.",
   detail:
-    "Warm, humid, and mostly cloudy through the day, with a chance of passing thunderstorms. Nothing to reroute us — just enough rain to make the windows worth sitting beside.",
+    "Humid and grey for most of the day, with a stray thunderstorm or two. None of it changes the plan. If anything, the rain makes the inside spots nicer.",
   humidity: "humid",
   rainWindows: [
     { label: "Late morning", fromHour: 11, toHour: 12 },

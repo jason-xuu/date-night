@@ -36,13 +36,13 @@ export const transitLegs = [
   {
     from: "Long Island City",
     to: "Greenpoint",
-    hint: "G train / a short rainy ride across the creek",
-    minutes: "~20 min",
+    hint: "G train, or a quick ride across the creek",
+    minutes: "about 20 min",
   },
   {
     from: "Greenpoint",
     to: "East Village",
-    hint: "L to 1st Ave, or the long way over the bridge",
-    minutes: "~30 min",
+    hint: "L train straight to 1st Ave",
+    minutes: "about 30 min",
   },
 ];

@@ -121,7 +121,7 @@ export default function DoodleCanvas() {
         onPointerLeave={end}
         className="h-56 w-full touch-none rounded-lg bg-[#f7f3ec] shadow-inner"
         style={{ cursor: "crosshair" }}
-        aria-label="Drawing canvas — draw with mouse or finger"
+        aria-label="Drawing canvas, draw with your mouse or finger"
         role="img"
       />
       <div className="mt-3 flex gap-3">

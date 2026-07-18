@@ -27,7 +27,7 @@ const mono = Space_Mono({
 
 export const metadata: Metadata = {
   title: "Our Saturday in New York",
-  description: `A rainy-day date across three neighborhoods — ${dateHuman}.`,
+  description: `A rainy-day date across three New York neighborhoods. ${dateHuman}.`,
 };
 
 export const viewport: Viewport = {

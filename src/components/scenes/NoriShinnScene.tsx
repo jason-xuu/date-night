@@ -6,14 +6,15 @@ import StopDetails from "@/components/itinerary/StopDetails";
 import { rise } from "@/lib/motion";
 import SceneFrame from "./SceneFrame";
 
-// The temaki, built one layer at a time as the scene enters.
-const layers = [
-  { label: "nori", color: "#141018", h: "100%" },
-  { label: "rice", color: "#efe7d6", h: "72%" },
-  { label: "salmon", color: "#d9713f", h: "48%" },
-  { label: "avocado", color: "#7f9b52", h: "40%" },
-  { label: "chive", color: "#3c5a3a", h: "30%" },
+// Fillings that rise out of the handroll, one after another, as the scene enters.
+const fillings = [
+  { c: "#d9713f", x: 100, angle: -16, len: 82, w: 12 }, // salmon
+  { c: "#b0463b", x: 112, angle: -6, len: 70, w: 11 }, // tuna
+  { c: "#e6b45a", x: 122, angle: 2, len: 60, w: 11 }, // tamago
+  { c: "#86a35a", x: 132, angle: 10, len: 80, w: 12 }, // avocado
+  { c: "#4e7d46", x: 144, angle: 18, len: 56, w: 9 }, // cucumber
 ];
+const rootY = 100;
 
 /**
  * Nori Shinn — the intimate close. Dominant concept: one warm counter light in
@@ -46,28 +47,58 @@ export default function NoriShinnScene({ stop }: { stop: ItineraryStop }) {
           <StopDetails stop={stop} tone="light" />
 
           <p className="mt-8 max-w-md font-display text-xl italic leading-relaxed text-nori-lantern/90">
-            Rice still warm, rain on the window, nowhere else we have to be.
-            Happy Saturday.
+            This is the part I&apos;m looking forward to most. Warm rice, rain
+            outside, and you. Happy Saturday.
           </p>
         </motion.div>
 
-        {/* the temaki */}
+        {/* the handroll */}
         <div className="relative flex items-center justify-center">
-          <div className="flex h-64 items-end gap-1.5" aria-hidden>
-            {layers.map((l, i) => (
-              <motion.div
-                key={l.label}
-                initial={{ height: 0, opacity: 0 }}
-                whileInView={{ height: l.h, opacity: 1 }}
+          <svg viewBox="0 0 240 280" className="h-72 w-full max-w-[260px]" role="img" aria-label="A hand roll being made, fillings tucked into the seaweed cone">
+            <g transform="rotate(-8 120 150)">
+              {/* rice sitting in the opening (behind the fillings) */}
+              <motion.ellipse
+                cx={120} cy={104} rx={58} ry={20} fill="#efe7d6"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.7, delay: 0.15 + i * 0.18, ease: [0.22, 1, 0.36, 1] }}
-                className="w-8 rounded-t-full"
-                style={{ background: l.color }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformBox: "fill-box", transformOrigin: "50% 100%" }}
               />
-            ))}
-          </div>
+
+              {/* fillings rising out of the roll */}
+              {fillings.map((f, i) => (
+                <g key={i} transform={`rotate(${f.angle} ${f.x} ${rootY})`}>
+                  <motion.rect
+                    x={f.x - f.w / 2} y={rootY - f.len} width={f.w} height={f.len + 16} rx={f.w / 2}
+                    fill={f.c}
+                    initial={{ scaleY: 0, opacity: 0 }}
+                    whileInView={{ scaleY: 1, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5, delay: 0.45 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ transformBox: "fill-box", transformOrigin: "50% 100%" }}
+                  />
+                </g>
+              ))}
+
+              {/* nori cone wrapping the front */}
+              <motion.g
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformBox: "fill-box", transformOrigin: "50% 100%" }}
+              >
+                <path d="M62 104 A58 20 0 0 0 178 104 L120 250 Z" fill="#15111b" />
+                {/* far rim of the opening */}
+                <path d="M62 104 A58 20 0 0 1 178 104" fill="none" stroke="#0c0a12" strokeWidth={3} opacity={0.7} />
+                {/* soft sheen down the seaweed */}
+                <path d="M96 118 L118 244" fill="none" stroke="#2c2436" strokeWidth={4} strokeLinecap="round" opacity={0.7} />
+              </motion.g>
+            </g>
+          </svg>
           <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 font-mono text-[11px] uppercase tracking-[0.3em] text-cream/40">
-            temaki, in order
+            made to order
           </span>
         </div>
       </div>

@@ -46,14 +46,14 @@ export const stops: ItineraryStop[] = [
     neighborhood: "Long Island City, Queens",
     address: "10-10 50th Ave, Long Island City, NY 11101",
     coordinates: [-73.9545, 40.7423],
-    tagline: "A Parisian morning, one stop from Manhattan.",
+    tagline: "French breakfast, one stop over the river.",
     description:
-      "We start slow. A corner French bistro from the Casa Enrique team — buckwheat crêpes, eggs Benedict, café crème — with the rain drawing lines down the window while we take our time.",
+      "We start slow. It's a little French corner spot in LIC, good crêpes and better coffee. If it's raining we take the window seat and stay a while.",
     budget: "$$ · brunch for two",
     calendar: {
       title: "Brunch at Café Henri",
       details:
-        "French brunch to start our Saturday — crêpes, eggs Benedict, café crème. 10-10 50th Ave, Long Island City.",
+        "French brunch to start the day. 10-10 50th Ave, Long Island City.",
     },
     mood: "warm · relaxed · Parisian morning",
   },
@@ -69,15 +69,15 @@ export const stops: ItineraryStop[] = [
     neighborhood: "Greenpoint, Brooklyn",
     address: "224 Franklin St, Brooklyn, NY 11222",
     coordinates: [-73.9578, 40.7296],
-    tagline: "Two hours, a table of paint, and no rules.",
+    tagline: "Two hours, some paint, no plan.",
     description:
-      "An art café with a garden out back. We pick something to make — ceramics, watercolors, a small collage — and spend the wet afternoon getting our hands messy. Reservation at 2:15.",
-    note: "Reserved · 2:15 PM · ~2 hours",
+      "It's an art café with a garden out back. We grab a project, pottery or watercolors or whatever looks fun, and spend the afternoon on it. I booked us in for 2:15.",
+    note: "Reserved · 2:15 PM · about 2 hours",
     budget: "$$ · project + a coffee each",
     calendar: {
-      title: "Happy Medium — art café",
+      title: "Happy Medium art café",
       details:
-        "Reserved art session — pick a project and make something. 224 Franklin St, Greenpoint. Reservation at 2:15 PM.",
+        "Art café, booked for 2:15. Pick a project and make something. 224 Franklin St, Greenpoint.",
     },
     mood: "artistic · playful · colorful",
   },
@@ -93,15 +93,15 @@ export const stops: ItineraryStop[] = [
     neighborhood: "East Village, Manhattan",
     address: "210 1st Ave, New York, NY 10009",
     coordinates: [-73.984, 40.7316],
-    tagline: "Warm counter, cold rain, handrolls in order.",
+    tagline: "Handrolls at the counter, one at a time.",
     description:
-      "We end at a small handroll bar on 1st Ave — seaweed crisp, rice warm, one roll at a time across the counter. Walk-in, so we arrive early and let the evening settle in around us.",
-    note: "Walk-in · arrive 5:00–5:30 to beat the wait",
-    budget: "$$$ · omakase-style handroll set",
+      "We finish at a tiny handroll spot on 1st Ave. You sit at the counter and they pass them over one by one, seaweed still crisp. No reservations, so we go early and take our time.",
+    note: "Walk-in · let's get there by 5 to beat the wait",
+    budget: "$$$ · the full handroll set",
     calendar: {
       title: "Dinner at Nori Shinn",
       details:
-        "Handroll dinner to close the day — walk-in handroll bar. 210 1st Ave, East Village. Aim to arrive 5:00–5:30 PM.",
+        "Handroll dinner to end the day. Walk-in, so aim to get there by 5. 210 1st Ave, East Village.",
     },
     mood: "intimate · dark · elegant",
   },
