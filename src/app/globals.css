@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ink text-cream font-body antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  /* Visible focus for keyboard users everywhere. */
+  :focus-visible {
+    outline: 2px solid theme("colors.glow");
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: theme("colors.glow");
+    color: theme("colors.ink.DEFAULT");
+  }
+}
+
+@layer components {
+  /* Frosted "looking through a window" card used across scenes. */
+  .glass-card {
+    @apply rounded-card border backdrop-blur-md;
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(20, 16, 25, 0.28);
+    box-shadow: theme("boxShadow.card");
+  }
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.28em];
+  }
+  .time-chip {
+    @apply font-mono text-sm tracking-wide;
+  }
+  /* Meets 44px min touch target without shouting about it. */
+  .tap {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 px-5;
+  }
+}
+
+/* Respect the user's wish for calm. Kills scroll-linked and looping motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Utility: bottom padding that clears the iOS home indicator. */
+.pb-safe {
+  padding-bottom: calc(0.75rem + var(--safe-b));
+}
+.pt-safe {
+  padding-top: calc(0.75rem + var(--safe-t));
+}
